@@ -1,0 +1,12 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET         /assets/*file                              controllers.Assets.versioned(path="/public", file: Asset)
+
+GET         /operator/get_vehicle_registered           controllers.OwnerController.getEarnedAmountForDay(date:String)
+POST        /customer/start_parking_period             controllers.CustomerController.startParkingPeriod(carRegistryNumber:String,driverType:String)
+GET         /customer/get_actual_parking_amount        controllers.CustomerController.getActualParkingAmount(carRegistryNumber:String)
+POST        /customer/stop_parking_period              controllers.CustomerController.stopParkingPeriod(carRegistryNumber:String)
+GET         /owner/get_earned_amount_for_day           controllers.OperatorController.getIsCarRegistered(date:String)
